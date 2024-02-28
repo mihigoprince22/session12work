@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mihigo Prince Session 8 Assignment</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style type="text/css">
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman',sans-serif;
+}
+nav{
+  background: blue;
+  padding: 5px 40px;
+  flex-basis: 50%;
+}
+nav ul{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+nav ul li{
+  padding: 15px 0;
+  cursor: pointer;
+}
+nav ul li.items{
+  position: relative;
+  width: auto;
+  margin: 0 16px;
+  text-align: center;
+  order: 4;
+}
+nav ul li.items:after{
+  position: !important;
+  content: '';
+  left: 0;
+  bottom: 5px;
+  height: 2px;
+  width: 100%;
+  background: orange;
+  opacity: 0;
+}
+nav ul li.items:hover:after{
+  opacity: 2;
+  bottom: 8px;
+}
+nav ul li.logo{
+  flex: 1;
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  cursor: default;
+  user-select: none;
+}
+nav ul li a{
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  transition: .10s;
+}
+nav ul li:hover a{
+  color: darkred;
+}
+ body {
+      background-image:url("data:image/jpeg;base64,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");
+      font-family:times new roman, sans-serif;
+      background-color: olive;
+      padding: 10px;
+      font-family:;
+      margin:10px;    
+      display: grid;
+      justify-content:center;
+      align-items: center;
+      height: 120vh;
+    }  
+    form {
+      width: 50%;
+      background-color: #A5D7E8;
+      padding: 50px;
+      border-radius: 10px;
+      margin: auto;
+      box-sizing: border-box;
+      align-items: center;
+      align-content: center;
+    }
+    h1 {
+      text-align: center;
+      color: forestgreen;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      color: black;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      border: 1px solid black;
+      border-radius:6px;
+    }
+    button {
+      background-color: #5ec2bf;
+      color: #thistle;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #d26020;
+    }
+    .div-3{
+            background-color: orange;
+            color: black;
+            text-decoration-color: blue;
+            text-align: center;
+            padding: 50px;
+            clear: both;
+            width: 100%;
+            text-align: center;
+            flex-basis: 50%;
+            bottom: 0;
+        }
+
+        footer a {
+            color: olive;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .fa-instagram {
+            background: #125688;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+        }
+        .fa-twitter {
+          background: #55ACEE;
+             color: white;
+                  }
+        .fa-youtube {
+              background: #bb0000;
+              color: white;
+            }
+            .fa-linkedin {
+            background: #007bb5;
+            color: white;
+          }
+          .fa-youtube {
+            background: #bb0000;
+            color: white;
+          }
+          .fa-google {
+  background: #dd4b39;
+  color: white;
+}
+        button:hover {
+            background-color: #4CAF50;
+        }
+  </style>
+</head>
+<body>
+  <nav>
+  <ul>
+    <li class="logo"> All For One</li>
+    <li class="items"><a href= "https://www.tesla.com/">Home</a></li> 
+    <li class="items"><a href= "https://www.tesla.com/inventory/new/my">Work Products</a></li>
+    <li class="items"><a href= "Mihigo Prince_TEC82203_Session_11_Assignment.html">School Projects</a></li>
+    <li class="items"><a href= "Prince_TEC82203_Session_8_Assignment.html">Services</a></li>
+    <li class="items"><a href= "">About</a></li> 
+    <li class="items"><a href= "Mihigo Prince_TEC82203_Session_10_Assignment.html">Contanct Us</a></li>
+  </ul>
+</nav>
+  <form>
+    <h1>Kepler Event Registration Form</h1>
+   
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="regNo">Registration Number:</label>
+    <input type="text" id="regNo" name="regNo" required>
+
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender" required>
+        <option value=""></option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+
+    <label for="eventName">Event Name:</label>
+    <input type="text" id="eventName" name="eventName" required>
+
+    <label for="reason">Reason/Description:</label>
+    <textarea id="reason" name="reason" rows="4" required></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+  <div class="div-3">
+     <footer>
+        <div class="div-4">
+          <h3> Contact Us</h3>
+            <a href="https://www.instagram.com/mihigo_prince/" class="fa fa-instagram" target="_blank"></a>
+            <a href="https://twitter.com/mihigoprince22" class="fa fa-twitter" target="_blank"></a>
+            <a href="https://www.youtube.com/channel/UCF3g1X5U8L_wnk3FjqK8Aag"></a>
+            <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl" class="fa fa-envelope" target="_blank"></a>
+            <a href="https://www.linkedin.com/in/mihigo-prince-155272217/" class="fa fa-linkedin" target="_blank"></a>
+        </div>
+        <br>
+        <div>
+            Contact us: prince.mihigo22@keplercollege.ac.rw | Phone: 0788315900 | &#169; 2024 Mihigo Prince, Kepler College
+        </div>
+</body>
+</html>
